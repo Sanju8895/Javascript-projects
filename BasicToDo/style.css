@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background: #f0ecec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.todo-container {
+    background: #fff;
+    padding:20px 28px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.todo-container #todo-input{
+    margin: 10px 0px;
+    /* width:75%; */
+    padding:8px 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+.todo-container #todo-input:focus{
+    outline: none;
+}
+.todo-container #update-btn,
+.todo-container #add-btn{
+    background: #52e485;
+    padding:9px 12px;
+    border:none;
+    border-radius: 5px;
+    color:#fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+.todo-container #update-btn:hover{
+    background: #14d156;   
+}
+.todo-container #add-btn:hover{
+    background: #14d156;
+}
+
+.todo-container #todo-list li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #e7e2e2;
+    padding:8px 6px;
+    border-radius: 5px;
+    font-size: 22px;
+    margin: 5px 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.todo-container #todo-list li .edit-btn,
+.todo-container #todo-list li .delete-btn{
+    background: #e33838;
+    padding:8px 10px;
+    border:none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.todo-container #todo-list li .delete-btn:hover{
+    background: #e50f0f;
+}
+
+.todo-container #todo-list li .edit-btn{
+    background: yellow;
+    color:#161515;
+}
+
+
+

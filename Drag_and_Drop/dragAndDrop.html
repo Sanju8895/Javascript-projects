@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and drop</title>
+    <style>
+        .main{
+            margin: auto;
+            border:1px solid gray;
+            width:500px;
+            height: 300px;
+            position: relative;
+            padding:2px
+        }
+        .left-panel{
+            position: absolute;
+            border:1px solid red;
+            width:49%;
+            height: 98%;
+        }
+        .right-panel{
+            border:1px solid green;
+            height: 98%;
+            width:49%;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left-panel" id="left" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="../demoImage.jfif" id="img" ondragstart="drag(event)" draggable="true" alt="image">
+        </div>
+        <div class="right-panel" id="right" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <script>
+        function allowDrop(e){
+            e.preventDefault();
+        }
+      
+        function drag(e){
+            e.dataTransfer.setData("text", e.target.id);
+
+        }
+        function drop(e){
+            e.preventDefault();
+            var data = e.dataTransfer.getData("text");
+            console.log(data, "Data value")
+            e.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+</html>
